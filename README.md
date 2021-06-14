@@ -1,3 +1,3 @@
-# Semantic-Tree
+# Semantic-IR
 
-derive semantically correct tree from `solar_parser::Ast`
+derive semantically correct ir from `solar_parser::Ast`

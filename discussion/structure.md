@@ -1,5 +1,5 @@
 
-# What's important about the semantic tree?
+# What's important about the semantic ir?
 
 - All items (Structs, Functions, Globals) are addressed by their full, absolute path (That is, starting with their library or application name) in the `concrete_scope`
 

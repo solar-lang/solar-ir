@@ -1,5 +1,5 @@
 [package]
-name = "solar-semantic-tree"
+name = "solar-semantic-ir"
 version = "0.1.0"
 authors = ["Nils Martel <nilsmartel@yahoo.de>"]
 edition = "2018"
