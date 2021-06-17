@@ -6,27 +6,30 @@ pub struct ConcreteFunction {
     pub arguments: Vec<(AbsIdent, (RefType, TypeIdent))>,
     /// return type
     pub ty: TypeIdent,
+
+    pub instructions: Vec<Statement>
 }
 
 pub enum Statement {
     /// Introduces a new variable into the scope
     VariableDeclaration {
         variable_name: AbsIdent,
-        ty: TypeIdent,
-        value: Expression,
+        ty: (RefType, TypeIdent),
+        assign: Option<Expression>,
     },
-    /// TODO: at the moment TODOS are not present in the AST, but are expected to follow
-    /// it's a decision, that Assignments should not be counted as expressions. Other options are
-    /// just as valid
+    // it's a decision, that Assignments should not be counted as expressions. Other options are
+    // just as valid
     Assignment {
-        /// Desitination of assignment
-        left: Expression,
-        /// Value of assignment
-        right: Expression,
+        variable: AbsIdent,
+        value: Expression,
+        ty: (RefType, TypeIdent),
     },
-    /// Recursion lies here. Expressions may hold Statements as well.
+    // Recursion lies here. Expressions may hold Statements as well.
     Expression(Expression),
 
+    // TODO if, when, for, loop, etc.
+    NewScope(Vec<Statement>),
+    Return()
 }
 
 // block of expressions yielding a single type as it's final expression
