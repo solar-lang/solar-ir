@@ -1,3 +1,4 @@
+mod generate_ir;
 use std::collections::HashMap;
 mod function;
 use function::ConcreteFunction;
