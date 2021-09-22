@@ -1,3 +1,4 @@
+mod scope;
 mod generate_ir;
 use std::collections::HashMap;
 mod function;
